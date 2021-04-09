@@ -8,13 +8,7 @@ Bundler.require(*Rails.groups)
 
 module Roadtripper
   class Application < Rails::Application
-    # Expose our application's helpers to Administrate
-    config.to_prepare do
-      Administrate::ApplicationController.helper Roadtripper::Application.helpers
-    end
-    config.active_job.queue_adapter = :sidekiq
-    config.application_name = Rails.application.class.module_parent_name
-    # Initialize configuration defaults for originally generated Rails version.
+  
     config.load_defaults 6.0
 
     # Settings in config/environments/* take precedence over those specified here.
